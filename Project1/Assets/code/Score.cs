@@ -5,7 +5,6 @@ public class Score : MonoBehaviour
 {
     public TextMesh curSco;
     public GameObject ballPref;
-    public Transform paddleObj;
     public float diff; 
 
     GameObject ball;
@@ -24,7 +23,7 @@ public class Score : MonoBehaviour
             score += 1;
             Destroy(ball);
 
-            (Instantiate(ballPref, new Vector3(paddleObj.transform.position.x + diff, paddleObj.transform.position.y, 0), Quaternion.identity) as GameObject).transform.parent = paddleObj;
+            ball= (Instantiate(ballPref, new Vector3(0, 0, 0), Quaternion.identity) as GameObject);
         }
     }
 
